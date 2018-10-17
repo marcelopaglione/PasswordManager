@@ -1,4 +1,6 @@
-﻿namespace PasswordManager.App
+﻿using System.Windows.Forms;
+
+namespace PasswordManager.App
 {
     partial class Dashboard
     {
@@ -33,9 +35,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.MenuPanel = new System.Windows.Forms.Panel();
             this.btnGuide = new System.Windows.Forms.Button();
             this.btnSearchPassword = new System.Windows.Forms.Button();
@@ -47,12 +49,10 @@
             this.btnNewPassword = new System.Windows.Forms.Button();
             this.btnMasterPassword = new System.Windows.Forms.Button();
             this.btnTitle = new System.Windows.Forms.Button();
+            new ToolTip().SetToolTip(this.btnTitle, "[H]ome");
             this.lblMassege = new System.Windows.Forms.Label();
             this.PasswordsContainerPanel = new System.Windows.Forms.Panel();
             this.PasswordsGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColDateUpdated = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,6 +62,9 @@
             this.ColCopy = new System.Windows.Forms.DataGridViewImageColumn();
             this.ColUpdate = new System.Windows.Forms.DataGridViewImageColumn();
             this.ColDelete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.MenuPanel.SuspendLayout();
             this.PasswordsContainerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PasswordsGridView)).BeginInit();
@@ -107,6 +110,7 @@
             this.btnGuide.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGuide.UseVisualStyleBackColor = false;
             this.btnGuide.Click += new System.EventHandler(this.btnGuide_Click);
+            new ToolTip().SetToolTip(this.btnGuide, "[G]uide");
             // 
             // btnSearchPassword
             // 
@@ -129,6 +133,7 @@
             this.btnSearchPassword.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSearchPassword.UseVisualStyleBackColor = false;
             this.btnSearchPassword.Click += new System.EventHandler(this.btnSearchPassword_Click);
+            new ToolTip().SetToolTip(this.btnSearchPassword, "[S]earch Password");
             // 
             // btnLogout
             // 
@@ -151,6 +156,7 @@
             this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            new ToolTip().SetToolTip(this.btnLogout, "Logout");
             // 
             // btnAbout
             // 
@@ -173,6 +179,7 @@
             this.btnAbout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAbout.UseVisualStyleBackColor = false;
             this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
+            new ToolTip().SetToolTip(this.btnAbout, "[A]bout");
             // 
             // btnSettings
             // 
@@ -195,6 +202,7 @@
             this.btnSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSettings.UseVisualStyleBackColor = false;
             this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
+            new ToolTip().SetToolTip(this.btnSettings, "Se[t]tings");
             // 
             // btnExportPasswords
             // 
@@ -217,6 +225,7 @@
             this.btnExportPasswords.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnExportPasswords.UseVisualStyleBackColor = false;
             this.btnExportPasswords.Click += new System.EventHandler(this.btnExportPasswords_Click);
+            new ToolTip().SetToolTip(this.btnExportPasswords, "Export");
             // 
             // btnImportPasswords
             // 
@@ -239,6 +248,7 @@
             this.btnImportPasswords.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnImportPasswords.UseVisualStyleBackColor = false;
             this.btnImportPasswords.Click += new System.EventHandler(this.btnImportPasswords_Click);
+            new ToolTip().SetToolTip(this.btnImportPasswords, "Import");
             // 
             // btnNewPassword
             // 
@@ -261,6 +271,7 @@
             this.btnNewPassword.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNewPassword.UseVisualStyleBackColor = false;
             this.btnNewPassword.Click += new System.EventHandler(this.btnNewPassword_Click);
+            new ToolTip().SetToolTip(this.btnNewPassword, "[N]ew Password");
             // 
             // btnMasterPassword
             // 
@@ -283,6 +294,7 @@
             this.btnMasterPassword.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMasterPassword.UseVisualStyleBackColor = false;
             this.btnMasterPassword.Click += new System.EventHandler(this.btnMasterPassword_Click);
+            new ToolTip().SetToolTip(this.btnMasterPassword, "[M]aster Password");
             // 
             // btnTitle
             // 
@@ -321,7 +333,6 @@
             this.lblMassege.TabIndex = 17;
             this.lblMassege.Text = " ";
             this.lblMassege.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblMassege.Click += new System.EventHandler(this.lblMassege_Click);
             // 
             // PasswordsContainerPanel
             // 
@@ -333,7 +344,6 @@
             this.PasswordsContainerPanel.Name = "PasswordsContainerPanel";
             this.PasswordsContainerPanel.Size = new System.Drawing.Size(943, 676);
             this.PasswordsContainerPanel.TabIndex = 1;
-            this.PasswordsContainerPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.PasswordsContainerPanel_Paint);
             // 
             // PasswordsGridView
             // 
@@ -403,47 +413,6 @@
             this.PasswordsGridView.TabIndex = 0;
             this.PasswordsGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PasswordsGridView_CellContentClick);
             this.PasswordsGridView.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.PasswordsGridView_CellMouseEnter);
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(140)))), ((int)(((byte)(235)))));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle7.NullValue")));
-            this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridViewImageColumn1.Description = "Copy This Password";
-            this.dataGridViewImageColumn1.HeaderText = "Copy";
-            this.dataGridViewImageColumn1.Image = global::PasswordManager.App.Properties.Resources.edit;
-            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.ReadOnly = true;
-            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewImageColumn1.Width = 73;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewImageColumn2.Description = "Update This Password";
-            this.dataGridViewImageColumn2.HeaderText = "Update";
-            this.dataGridViewImageColumn2.Image = global::PasswordManager.App.Properties.Resources.edit;
-            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.ReadOnly = true;
-            this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewImageColumn2.Width = 73;
-            // 
-            // dataGridViewImageColumn3
-            // 
-            this.dataGridViewImageColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewImageColumn3.Description = "Delete This Password";
-            this.dataGridViewImageColumn3.HeaderText = "Delete";
-            this.dataGridViewImageColumn3.Image = global::PasswordManager.App.Properties.Resources.page_delete;
-            this.dataGridViewImageColumn3.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
-            this.dataGridViewImageColumn3.ReadOnly = true;
-            this.dataGridViewImageColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewImageColumn3.Width = 73;
             // 
             // ColID
             // 
@@ -520,6 +489,47 @@
             this.ColDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.ColDelete.Width = 65;
             // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(140)))), ((int)(((byte)(235)))));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle7.NullValue")));
+            this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridViewImageColumn1.Description = "Copy This Password";
+            this.dataGridViewImageColumn1.HeaderText = "Copy";
+            this.dataGridViewImageColumn1.Image = global::PasswordManager.App.Properties.Resources.edit;
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn1.Width = 73;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewImageColumn2.Description = "Update This Password";
+            this.dataGridViewImageColumn2.HeaderText = "Update";
+            this.dataGridViewImageColumn2.Image = global::PasswordManager.App.Properties.Resources.edit;
+            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.ReadOnly = true;
+            this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn2.Width = 73;
+            // 
+            // dataGridViewImageColumn3
+            // 
+            this.dataGridViewImageColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewImageColumn3.Description = "Delete This Password";
+            this.dataGridViewImageColumn3.HeaderText = "Delete";
+            this.dataGridViewImageColumn3.Image = global::PasswordManager.App.Properties.Resources.page_delete;
+            this.dataGridViewImageColumn3.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
+            this.dataGridViewImageColumn3.ReadOnly = true;
+            this.dataGridViewImageColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn3.Width = 73;
+            // 
             // Dashboard
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -528,11 +538,13 @@
             this.Controls.Add(this.MenuPanel);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Dashboard_FormClosed);
             this.Load += new System.EventHandler(this.Dashboard_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OpenByShortCut);
             this.MenuPanel.ResumeLayout(false);
             this.PasswordsContainerPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PasswordsGridView)).EndInit();

@@ -322,14 +322,32 @@ namespace PasswordManager.App
             lblMassege.ForeColor = FontColor;
         }
 
-        private void lblMassege_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PasswordsContainerPanel_Paint(object sender, PaintEventArgs e)
-        {
-
+        private void OpenByShortCut(object sender, KeyEventArgs e)
+        {            
+            switch (e.KeyCode)
+            {
+                case Keys.H:
+                    btnTitle_Click(null, null);
+                    break;
+                case Keys.S:
+                    btnSearchPassword_Click(null, null);
+                    break;
+                case Keys.N:
+                    btnNewPassword_Click(null, null);
+                    break;
+                case Keys.M:
+                    btnMasterPassword_Click(null, null);
+                    break;                
+                case Keys.G:
+                    btnGuide_Click(null, null);
+                    break;
+                case Keys.T:
+                    btnSettings_Click(null, null);
+                    break;
+                case Keys.A:
+                    btnAbout_Click(null, null);
+                    break;
+            }
         }
     }
 }
