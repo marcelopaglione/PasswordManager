@@ -36,7 +36,7 @@
             this.lblCreateAccount = new System.Windows.Forms.Label();
             this.lblForgotPassword = new System.Windows.Forms.Label();
             this.txtLoginPass = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -72,7 +72,7 @@
             this.panel3.Controls.Add(this.lblCreateAccount);
             this.panel3.Controls.Add(this.lblForgotPassword);
             this.panel3.Controls.Add(this.txtLoginPass);
-            this.panel3.Controls.Add(this.txtEmail);
+            this.panel3.Controls.Add(this.txtUsername);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.label1);
@@ -149,17 +149,17 @@
             this.txtLoginPass.UseSystemPasswordChar = true;
             this.txtLoginPass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtLoginPass_EnterPressed);
             // 
-            // txtEmail
+            // txtUsername
             // 
-            this.txtEmail.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.txtEmail.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.RecentlyUsedList;
-            this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(246)))));
-            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(64)))));
-            this.txtEmail.Location = new System.Drawing.Point(123, 110);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(225, 29);
-            this.txtEmail.TabIndex = 4;
+            this.txtUsername.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.txtUsername.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.RecentlyUsedList;
+            this.txtUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(246)))));
+            this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(64)))));
+            this.txtUsername.Location = new System.Drawing.Point(123, 110);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(225, 29);
+            this.txtUsername.TabIndex = 4;
             // 
             // label3
             // 
@@ -173,11 +173,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(61, 113);
+            this.label2.Location = new System.Drawing.Point(67, 112);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 21);
+            this.label2.Size = new System.Drawing.Size(49, 21);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Email :";
+            this.label2.Text = "User :";
             // 
             // label1
             // 
@@ -259,7 +259,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtLoginPass;
-        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblCreateAccount;

@@ -41,12 +41,12 @@ namespace PasswordManager.App
                 ResetControls();
                 btnLogin.Enabled = false;
 
-                if (!Verifier.Email(txtEmail.Text))
+                if (!Verifier.Text(txtUsername.Text))
                 {
-                    lblMassege.Text = "Please Enter a Valid Email Address.";
+                    lblMassege.Text = "Please Enter a Valid User Name.";
                     lblMassege.ForeColor = Color.Red;
 
-                    txtEmail.Focus();
+                    txtUsername.Focus();
                 }
                 else if (!Verifier.Text(txtLoginPass.Text))
                 {
@@ -60,7 +60,7 @@ namespace PasswordManager.App
                     User user = new User()
                     {
                         ID = 1, //temporaryID for Validation
-                        Email = txtEmail.Text,
+                        Email = txtUsername.Text,
                         Master = txtLoginPass.Text
                     };
 
@@ -80,7 +80,7 @@ namespace PasswordManager.App
                         lblMassege.Text = "No user found with the supplied credentials.";
                         lblMassege.ForeColor = Color.Red;
 
-                        txtEmail.Focus();
+                        txtUsername.Focus();
                     }
 
                     picboxLoading.Hide();

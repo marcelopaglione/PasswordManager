@@ -32,7 +32,7 @@ namespace PasswordManager.Data
         {
             if (Database.AddNewUser(user) > 0)
             {
-                user = Database.GetUserByEmail(user.Email);
+                user = Database.GetUserByUsename(user.Username);
                 if (Database.AddSettingsByUserID(user.ID, settings) > 0)
                 {
                     if (Database.AddPasswordOptionsBySettingsID(Database.GetSettingsByUserID(user.ID).ID, passwordOptions) > 0)
@@ -53,7 +53,7 @@ namespace PasswordManager.Data
 
         public User LoginUser(User user)
         {
-            return Database.GetUserByEmail(user.Email);
+            return Database.GetUserByUsename(user.Username);
         }
 
         public int UpdateUser(User user)

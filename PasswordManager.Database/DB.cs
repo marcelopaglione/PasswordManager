@@ -147,6 +147,37 @@ namespace PasswordManager.Database
         }
 
         /// <summary>
+        /// Get User from Database via Email
+        /// </summary>
+        /// <param name="Username">User Email to select User.</param>
+        /// <returns>User Entity.</returns>
+        public User GetUserByUsename(string Username)
+        {
+            User user = null;
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("Select * from Users where Username = @Username", con))
+                {
+                    cmd.Parameters.Add(new SqlParameter("@Username", Username));
+                    con.Open();
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        user = new User();
+                        user.ID = Convert.ToInt32(reader["ID"]);
+                        user.Name = reader["Name"].ToString();
+                        user.Username = reader["Username"].ToString();
+                        user.Email = reader["Email"].ToString();
+                        user.Master = reader["Master"].ToString();
+                    }
+                }
+            }
+            return user;
+        }
+
+        /// <summary>
         /// Update User
         /// </summary>
         /// <param name="user">User Entity to Update.</param>
