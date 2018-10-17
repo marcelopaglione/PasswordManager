@@ -60,7 +60,7 @@ namespace PasswordManager.App
                     User user = new User()
                     {
                         ID = 1, //temporaryID for Validation
-                        Email = txtUsername.Text,
+                        Username = txtUsername.Text,
                         Master = txtLoginPass.Text
                     };
 
