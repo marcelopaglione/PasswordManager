@@ -351,6 +351,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MaximumSize = new System.Drawing.Size(800, 500);
             this.MinimumSize = new System.Drawing.Size(800, 500);
             this.Name = "UpdatePassword";
@@ -359,6 +360,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UpdatePassword";
             this.Load += new System.EventHandler(this.UpdatePassword_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CloseWindow);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.TitlePanel.ResumeLayout(false);

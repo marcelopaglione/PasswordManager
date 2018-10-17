@@ -127,6 +127,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Guidelines";
             this.Load += new System.EventHandler(this.Guide_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CloseWindow);
             this.panel1.ResumeLayout(false);
             this.TitlePanel.ResumeLayout(false);
             this.TitlePanel.PerformLayout();

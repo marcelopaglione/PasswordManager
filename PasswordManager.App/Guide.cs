@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PasswordManager.Globals;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,14 @@ namespace PasswordManager.App
         private void Guide_Load(object sender, EventArgs e)
         {
             lblGuide1.Text = Globals.Information.Guidelines;
+        }
+
+        private void CloseWindow(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                Functions.CloseWindow(sender, e, this);
+            }
         }
     }
 }

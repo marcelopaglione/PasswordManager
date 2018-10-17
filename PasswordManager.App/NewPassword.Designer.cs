@@ -351,6 +351,7 @@
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(800, 500);
             this.MinimumSize = new System.Drawing.Size(800, 500);
@@ -360,6 +361,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "New Password";
             this.Load += new System.EventHandler(this.NewPassword_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.closeWindow);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.TitlePanel.ResumeLayout(false);

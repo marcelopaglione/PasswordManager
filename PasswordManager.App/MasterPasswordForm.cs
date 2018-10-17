@@ -126,5 +126,10 @@ namespace PasswordManager.App
                 return false;
             }
         }
+
+        private void CloseWindow(object sender, KeyEventArgs e)
+        {
+            Functions.CloseWindow(sender, e, this);
+        }
     }
 }

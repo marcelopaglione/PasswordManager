@@ -424,6 +424,7 @@
             this.Controls.Add(this.groupBox2);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.KeyPreview = true;
             this.MaximumSize = new System.Drawing.Size(300, 350);
             this.MinimumSize = new System.Drawing.Size(300, 350);
             this.Name = "PasswordGenerateOptions";
@@ -432,6 +433,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Password Generate Options";
             this.Load += new System.EventHandler(this.PasswordGenerateOptions_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CloseWindow);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);

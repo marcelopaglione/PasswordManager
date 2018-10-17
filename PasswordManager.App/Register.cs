@@ -121,5 +121,10 @@ namespace PasswordManager.App
             lblMassege.Text = string.Empty;
             btnRegister.Enabled = true;
         }
+
+        private void CloseWindow(object sender, KeyEventArgs e)
+        {
+            btnCancel_Click(null, null);
+        }
     }
 }

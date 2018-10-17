@@ -126,5 +126,10 @@ namespace PasswordManager.App
                 Messenger.Show(ex.Message + " " + ex.HResult, "Error");
             }
         }
+
+        private void CloseWindow(object sender, KeyEventArgs e)
+        {
+            Functions.CloseWindow(sender, e, this);
+        }
     }
 }

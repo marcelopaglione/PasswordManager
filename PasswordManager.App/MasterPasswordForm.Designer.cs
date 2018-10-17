@@ -68,6 +68,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(484, 461);
             this.panel1.TabIndex = 52;
+            this.panel1.UseWaitCursor = true;
             // 
             // lblMasterNote
             // 
@@ -82,6 +83,7 @@
             this.lblMasterNote.Name = "lblMasterNote";
             this.lblMasterNote.Size = new System.Drawing.Size(376, 170);
             this.lblMasterNote.TabIndex = 78;
+            this.lblMasterNote.UseWaitCursor = true;
             // 
             // TitlePanel
             // 
@@ -89,12 +91,13 @@
             this.TitlePanel.Controls.Add(this.lblFormTitle);
             this.TitlePanel.Controls.Add(this.TitlePictureBox);
             this.TitlePanel.Controls.Add(this.lblAppMotto);
-            this.TitlePanel.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.TitlePanel.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.TitlePanel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.TitlePanel.Location = new System.Drawing.Point(95, 2);
             this.TitlePanel.Name = "TitlePanel";
             this.TitlePanel.Size = new System.Drawing.Size(321, 70);
             this.TitlePanel.TabIndex = 77;
+            this.TitlePanel.UseWaitCursor = true;
             // 
             // lblFormTitle
             // 
@@ -105,6 +108,7 @@
             this.lblFormTitle.Size = new System.Drawing.Size(199, 32);
             this.lblFormTitle.TabIndex = 34;
             this.lblFormTitle.Text = "Master Password";
+            this.lblFormTitle.UseWaitCursor = true;
             // 
             // TitlePictureBox
             // 
@@ -115,16 +119,18 @@
             this.TitlePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.TitlePictureBox.TabIndex = 10;
             this.TitlePictureBox.TabStop = false;
+            this.TitlePictureBox.UseWaitCursor = true;
             // 
             // lblAppMotto
             // 
             this.lblAppMotto.AutoSize = true;
-            this.lblAppMotto.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.lblAppMotto.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.lblAppMotto.Location = new System.Drawing.Point(67, 38);
             this.lblAppMotto.Name = "lblAppMotto";
             this.lblAppMotto.Size = new System.Drawing.Size(247, 17);
             this.lblAppMotto.TabIndex = 89;
             this.lblAppMotto.Text = "BearPass - Personal Password Manager";
+            this.lblAppMotto.UseWaitCursor = true;
             // 
             // panel2
             // 
@@ -147,6 +153,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(484, 212);
             this.panel2.TabIndex = 60;
+            this.panel2.UseWaitCursor = true;
             // 
             // picboxLoading
             // 
@@ -157,6 +164,7 @@
             this.picboxLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picboxLoading.TabIndex = 86;
             this.picboxLoading.TabStop = false;
+            this.picboxLoading.UseWaitCursor = true;
             this.picboxLoading.Visible = false;
             // 
             // chkHideConfirmMaster
@@ -171,6 +179,7 @@
             this.chkHideConfirmMaster.TabIndex = 85;
             this.chkHideConfirmMaster.Text = "Hide";
             this.chkHideConfirmMaster.UseVisualStyleBackColor = true;
+            this.chkHideConfirmMaster.UseWaitCursor = true;
             this.chkHideConfirmMaster.CheckedChanged += new System.EventHandler(this.chkShowConfirmMaster_CheckedChanged);
             // 
             // chkHideNewMaster
@@ -185,6 +194,7 @@
             this.chkHideNewMaster.TabIndex = 84;
             this.chkHideNewMaster.Text = "Hide";
             this.chkHideNewMaster.UseVisualStyleBackColor = true;
+            this.chkHideNewMaster.UseWaitCursor = true;
             this.chkHideNewMaster.CheckedChanged += new System.EventHandler(this.chkShowNewMaster_CheckedChanged);
             // 
             // chkHideMaster
@@ -199,6 +209,7 @@
             this.chkHideMaster.TabIndex = 83;
             this.chkHideMaster.Text = "Hide";
             this.chkHideMaster.UseVisualStyleBackColor = true;
+            this.chkHideMaster.UseWaitCursor = true;
             this.chkHideMaster.CheckedChanged += new System.EventHandler(this.chkShowMaster_CheckedChanged);
             // 
             // txtConfirmMaster
@@ -211,6 +222,7 @@
             this.txtConfirmMaster.Size = new System.Drawing.Size(162, 29);
             this.txtConfirmMaster.TabIndex = 82;
             this.txtConfirmMaster.UseSystemPasswordChar = true;
+            this.txtConfirmMaster.UseWaitCursor = true;
             this.txtConfirmMaster.TextChanged += new System.EventHandler(this.CheckSaveEnable);
             // 
             // label4
@@ -221,6 +233,7 @@
             this.label4.Size = new System.Drawing.Size(126, 21);
             this.label4.TabIndex = 81;
             this.label4.Text = "Confirm Master :";
+            this.label4.UseWaitCursor = true;
             // 
             // txtNewMaster
             // 
@@ -232,6 +245,7 @@
             this.txtNewMaster.Size = new System.Drawing.Size(162, 29);
             this.txtNewMaster.TabIndex = 80;
             this.txtNewMaster.UseSystemPasswordChar = true;
+            this.txtNewMaster.UseWaitCursor = true;
             this.txtNewMaster.TextChanged += new System.EventHandler(this.CheckSaveEnable);
             // 
             // label1
@@ -242,6 +256,7 @@
             this.label1.Size = new System.Drawing.Size(101, 21);
             this.label1.TabIndex = 79;
             this.label1.Text = "New Master :";
+            this.label1.UseWaitCursor = true;
             // 
             // txtMaster
             // 
@@ -253,6 +268,7 @@
             this.txtMaster.Size = new System.Drawing.Size(162, 29);
             this.txtMaster.TabIndex = 32;
             this.txtMaster.UseSystemPasswordChar = true;
+            this.txtMaster.UseWaitCursor = true;
             this.txtMaster.TextChanged += new System.EventHandler(this.CheckSaveEnable);
             // 
             // label7
@@ -263,12 +279,13 @@
             this.label7.Size = new System.Drawing.Size(122, 21);
             this.label7.TabIndex = 29;
             this.label7.Text = "Existing Master :";
+            this.label7.UseWaitCursor = true;
             // 
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.Color.DarkCyan;
             this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.btnSave.Enabled = false;
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -283,6 +300,7 @@
             this.btnSave.Text = "Change";
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.UseWaitCursor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // lblMassege
@@ -296,6 +314,7 @@
             this.lblMassege.TabIndex = 53;
             this.lblMassege.Text = " ";
             this.lblMassege.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMassege.UseWaitCursor = true;
             // 
             // MasterPasswordForm
             // 
@@ -306,6 +325,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(500, 500);
             this.MinimumSize = new System.Drawing.Size(500, 500);
@@ -314,7 +334,9 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Master Password";
+            this.UseWaitCursor = true;
             this.Load += new System.EventHandler(this.MasterPasswordForm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CloseWindow);
             this.panel1.ResumeLayout(false);
             this.TitlePanel.ResumeLayout(false);
             this.TitlePanel.PerformLayout();

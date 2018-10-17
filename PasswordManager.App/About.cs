@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PasswordManager.Globals;
 
 namespace PasswordManager.App
 {
@@ -63,9 +64,9 @@ namespace PasswordManager.App
             Process.Start(Globals.Information.GitHubSourceLink);
         }
 
-        private void TitlePictureBox_Click(object sender, EventArgs e)
+        private void CloseWindow(object sender, KeyEventArgs e)
         {
-
+            Functions.CloseWindow(sender,e, this);
         }
     }
 }

@@ -100,14 +100,13 @@
             // 
             // TitlePictureBox
             // 
-            this.TitlePictureBox.Image = global::PasswordManager.App.Properties.Resources.csg;
+            this.TitlePictureBox.Image = global::PasswordManager.App.Properties.Resources.about;
             this.TitlePictureBox.Location = new System.Drawing.Point(7, 10);
             this.TitlePictureBox.Name = "TitlePictureBox";
             this.TitlePictureBox.Size = new System.Drawing.Size(50, 45);
             this.TitlePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.TitlePictureBox.TabIndex = 10;
             this.TitlePictureBox.TabStop = false;
-            this.TitlePictureBox.Click += new System.EventHandler(this.TitlePictureBox_Click);
             // 
             // lblAppMotto
             // 
@@ -318,6 +317,7 @@
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(600, 700);
             this.Name = "About";
@@ -326,6 +326,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "About";
             this.Load += new System.EventHandler(this.About_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CloseWindow);
             this.panel1.ResumeLayout(false);
             this.TitlePanel.ResumeLayout(false);
             this.TitlePanel.PerformLayout();

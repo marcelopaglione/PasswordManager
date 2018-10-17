@@ -1,4 +1,5 @@
 ﻿using PasswordManager.Entities;
+using PasswordManager.Globals;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,19 +19,14 @@ namespace PasswordManager.App
             InitializeComponent();
         }
 
-        private void Search_Load(object sender, EventArgs e)
+        private void CloseWindow(object sender, KeyEventArgs e)
         {
-
+            Functions.CloseWindow(sender, e, this);
         }
 
         private void btnSearchPassword_Click(object sender, EventArgs e)
         {
 
         }
-
-        //private void btnSearchPassword_Click(object sender, EventArgs e)
-        //{
-        //    passwords = passwords.Where(p => p.Name.ToLower().Contains(txtSearchPassword.Text)).ToList();
-        //}
     }
 }
