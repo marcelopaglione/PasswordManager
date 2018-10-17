@@ -75,7 +75,7 @@
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(784, 461);
+            this.panel1.Size = new System.Drawing.Size(784, 561);
             this.panel1.TabIndex = 50;
             // 
             // label5
@@ -219,7 +219,7 @@
             this.panel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(64)))));
             this.panel2.Location = new System.Drawing.Point(0, 214);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(784, 247);
+            this.panel2.Size = new System.Drawing.Size(784, 347);
             this.panel2.TabIndex = 60;
             // 
             // btnCancel
@@ -233,7 +233,7 @@
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Image = global::PasswordManager.App.Properties.Resources.close;
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.Location = new System.Drawing.Point(163, 196);
+            this.btnCancel.Location = new System.Drawing.Point(163, 293);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(110, 42);
             this.btnCancel.TabIndex = 8;
@@ -248,7 +248,7 @@
             this.rtxtNotes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(64)))));
             this.rtxtNotes.Location = new System.Drawing.Point(164, 82);
             this.rtxtNotes.Name = "rtxtNotes";
-            this.rtxtNotes.Size = new System.Drawing.Size(530, 108);
+            this.rtxtNotes.Size = new System.Drawing.Size(530, 205);
             this.rtxtNotes.TabIndex = 6;
             this.rtxtNotes.Text = "";
             this.rtxtNotes.TextChanged += new System.EventHandler(this.ForSaveBtnEnable);
@@ -296,7 +296,7 @@
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Image = global::PasswordManager.App.Properties.Resources.floppy_disk;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(279, 196);
+            this.btnSave.Location = new System.Drawing.Point(279, 293);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(110, 42);
             this.btnSave.TabIndex = 7;
@@ -346,15 +346,15 @@
             // NewPassword
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(784, 461);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(800, 500);
-            this.MinimumSize = new System.Drawing.Size(800, 500);
+            this.MaximumSize = new System.Drawing.Size(800, 600);
+            this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "NewPassword";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
