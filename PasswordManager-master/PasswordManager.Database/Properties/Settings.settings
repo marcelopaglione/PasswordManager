@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="PasswordManager.Database.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="PasswordManagerDBConnection" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Data Source=SAO-AA190110\MSSQLSERVER01;Initial Catalog=PasswordManager;Integrated Security=SSPI;</Value>
+    </Setting>
+    <Setting Name="PasswordManagerSQLiteDBConnection" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Data Source=|DataDirectory|bearpass.data</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

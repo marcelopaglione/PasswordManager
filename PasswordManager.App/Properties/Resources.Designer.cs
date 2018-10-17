@@ -19,7 +19,7 @@ namespace PasswordManager.App.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -93,9 +93,29 @@ namespace PasswordManager.App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add2 {
+            get {
+                object obj = ResourceManager.GetObject("add2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap add3 {
+            get {
+                object obj = ResourceManager.GetObject("add3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap arrow_right {
             get {
-                object obj = ResourceManager.GetObject("arrow.right", resourceCulture);
+                object obj = ResourceManager.GetObject("arrow_right", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -105,7 +125,7 @@ namespace PasswordManager.App.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap arrow_right_light {
             get {
-                object obj = ResourceManager.GetObject("arrow-right-light", resourceCulture);
+                object obj = ResourceManager.GetObject("arrow_right_light", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -115,7 +135,87 @@ namespace PasswordManager.App.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap cancel_40 {
             get {
-                object obj = ResourceManager.GetObject("cancel.40", resourceCulture);
+                object obj = ResourceManager.GetObject("cancel_40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap close {
+            get {
+                object obj = ResourceManager.GetObject("close", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cloud_computing {
+            get {
+                object obj = ResourceManager.GetObject("cloud_computing", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap csg {
+            get {
+                object obj = ResourceManager.GetObject("csg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap document {
+            get {
+                object obj = ResourceManager.GetObject("document", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap download {
+            get {
+                object obj = ResourceManager.GetObject("download", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap download_to_storage_drive {
+            get {
+                object obj = ResourceManager.GetObject("download_to_storage_drive", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap download_to_storage_drive_black {
+            get {
+                object obj = ResourceManager.GetObject("download_to_storage_drive_black", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap earth_grid {
+            get {
+                object obj = ResourceManager.GetObject("earth_grid", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -126,6 +226,26 @@ namespace PasswordManager.App.Properties {
         internal static System.Drawing.Bitmap edit {
             get {
                 object obj = ResourceManager.GetObject("edit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap exchange {
+            get {
+                object obj = ResourceManager.GetObject("exchange", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap exchange_2 {
+            get {
+                object obj = ResourceManager.GetObject("exchange_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +273,89 @@ namespace PasswordManager.App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap faq {
+            get {
+                object obj = ResourceManager.GetObject("faq", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap file {
+            get {
+                object obj = ResourceManager.GetObject("file", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap filter {
+            get {
+                object obj = ResourceManager.GetObject("filter", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap filter1 {
+            get {
+                object obj = ResourceManager.GetObject("filter1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap filter2 {
+            get {
+                object obj = ResourceManager.GetObject("filter2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap filter3 {
+            get {
+                object obj = ResourceManager.GetObject("filter3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap flag_bear {
             get {
-                object obj = ResourceManager.GetObject("flag.bear", resourceCulture);
+                object obj = ResourceManager.GetObject("flag_bear", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap floppy_disk {
+            get {
+                object obj = ResourceManager.GetObject("floppy_disk", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap funnel {
+            get {
+                object obj = ResourceManager.GetObject("funnel", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,10 +373,30 @@ namespace PasswordManager.App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap home {
+            get {
+                object obj = ResourceManager.GetObject("home", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_blue {
             get {
-                object obj = ResourceManager.GetObject("icon-blue", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_blue", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon icon_blue_large {
+            get {
+                object obj = ResourceManager.GetObject("icon_blue_large", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
         
@@ -205,7 +425,7 @@ namespace PasswordManager.App.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap loading_gear_anim {
             get {
-                object obj = ResourceManager.GetObject("loading.gear.anim", resourceCulture);
+                object obj = ResourceManager.GetObject("loading_gear_anim", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -225,7 +445,7 @@ namespace PasswordManager.App.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap login_40 {
             get {
-                object obj = ResourceManager.GetObject("login.40", resourceCulture);
+                object obj = ResourceManager.GetObject("login_40", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -235,7 +455,7 @@ namespace PasswordManager.App.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap login_btn_light {
             get {
-                object obj = ResourceManager.GetObject("login-btn-light", resourceCulture);
+                object obj = ResourceManager.GetObject("login_btn_light", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -245,7 +465,7 @@ namespace PasswordManager.App.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap login_loading {
             get {
-                object obj = ResourceManager.GetObject("login.loading", resourceCulture);
+                object obj = ResourceManager.GetObject("login_loading", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -263,9 +483,19 @@ namespace PasswordManager.App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap options {
+            get {
+                object obj = ResourceManager.GetObject("options", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap page_copy {
             get {
-                object obj = ResourceManager.GetObject("page.copy", resourceCulture);
+                object obj = ResourceManager.GetObject("page_copy", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -275,7 +505,7 @@ namespace PasswordManager.App.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap page_delete {
             get {
-                object obj = ResourceManager.GetObject("page.delete", resourceCulture);
+                object obj = ResourceManager.GetObject("page_delete", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -285,7 +515,7 @@ namespace PasswordManager.App.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap page_edit {
             get {
-                object obj = ResourceManager.GetObject("page.edit", resourceCulture);
+                object obj = ResourceManager.GetObject("page_edit", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -295,7 +525,7 @@ namespace PasswordManager.App.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap password_cancel_40 {
             get {
-                object obj = ResourceManager.GetObject("password.cancel.40", resourceCulture);
+                object obj = ResourceManager.GetObject("password_cancel_40", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -305,7 +535,7 @@ namespace PasswordManager.App.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap password_confirm_40 {
             get {
-                object obj = ResourceManager.GetObject("password.confirm.40", resourceCulture);
+                object obj = ResourceManager.GetObject("password_confirm_40", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -315,7 +545,7 @@ namespace PasswordManager.App.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap password_export {
             get {
-                object obj = ResourceManager.GetObject("password.export", resourceCulture);
+                object obj = ResourceManager.GetObject("password_export", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -325,7 +555,7 @@ namespace PasswordManager.App.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap password_generate {
             get {
-                object obj = ResourceManager.GetObject("password.generate", resourceCulture);
+                object obj = ResourceManager.GetObject("password_generate", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -335,7 +565,7 @@ namespace PasswordManager.App.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap password_guide {
             get {
-                object obj = ResourceManager.GetObject("password.guide", resourceCulture);
+                object obj = ResourceManager.GetObject("password_guide", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -345,7 +575,7 @@ namespace PasswordManager.App.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap password_import {
             get {
-                object obj = ResourceManager.GetObject("password.import", resourceCulture);
+                object obj = ResourceManager.GetObject("password_import", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -355,7 +585,7 @@ namespace PasswordManager.App.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap password_master {
             get {
-                object obj = ResourceManager.GetObject("password.master", resourceCulture);
+                object obj = ResourceManager.GetObject("password_master", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -365,7 +595,7 @@ namespace PasswordManager.App.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap password_master_save_40 {
             get {
-                object obj = ResourceManager.GetObject("password.master.save.40", resourceCulture);
+                object obj = ResourceManager.GetObject("password_master_save_40", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -375,7 +605,7 @@ namespace PasswordManager.App.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap password_new {
             get {
-                object obj = ResourceManager.GetObject("password.new", resourceCulture);
+                object obj = ResourceManager.GetObject("password_new", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -385,7 +615,7 @@ namespace PasswordManager.App.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap password_new_40 {
             get {
-                object obj = ResourceManager.GetObject("password.new.40", resourceCulture);
+                object obj = ResourceManager.GetObject("password_new_40", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -395,7 +625,7 @@ namespace PasswordManager.App.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap password_options {
             get {
-                object obj = ResourceManager.GetObject("password.options", resourceCulture);
+                object obj = ResourceManager.GetObject("password_options", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -405,7 +635,7 @@ namespace PasswordManager.App.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap password_search {
             get {
-                object obj = ResourceManager.GetObject("password.search", resourceCulture);
+                object obj = ResourceManager.GetObject("password_search", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -415,7 +645,7 @@ namespace PasswordManager.App.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap password_search_40 {
             get {
-                object obj = ResourceManager.GetObject("password.search.40", resourceCulture);
+                object obj = ResourceManager.GetObject("password_search_40", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -425,7 +655,7 @@ namespace PasswordManager.App.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap passwords_about_40 {
             get {
-                object obj = ResourceManager.GetObject("passwords.about.40", resourceCulture);
+                object obj = ResourceManager.GetObject("passwords_about_40", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -435,7 +665,7 @@ namespace PasswordManager.App.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap passwords_about_50 {
             get {
-                object obj = ResourceManager.GetObject("passwords.about.50", resourceCulture);
+                object obj = ResourceManager.GetObject("passwords_about_50", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -445,7 +675,7 @@ namespace PasswordManager.App.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap people_right {
             get {
-                object obj = ResourceManager.GetObject("people.right", resourceCulture);
+                object obj = ResourceManager.GetObject("people_right", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -463,9 +693,49 @@ namespace PasswordManager.App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap power_button {
+            get {
+                object obj = ResourceManager.GetObject("power_button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap question {
+            get {
+                object obj = ResourceManager.GetObject("question", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap register_40 {
             get {
-                object obj = ResourceManager.GetObject("register.40", resourceCulture);
+                object obj = ResourceManager.GetObject("register_40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap research {
+            get {
+                object obj = ResourceManager.GetObject("research", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap research_1 {
+            get {
+                object obj = ResourceManager.GetObject("research_1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -475,7 +745,7 @@ namespace PasswordManager.App.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap sajjadgul_smalllogo {
             get {
-                object obj = ResourceManager.GetObject("sajjadgul-smalllogo", resourceCulture);
+                object obj = ResourceManager.GetObject("sajjadgul_smalllogo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -495,7 +765,7 @@ namespace PasswordManager.App.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap settings_cancel_40 {
             get {
-                object obj = ResourceManager.GetObject("settings.cancel.40", resourceCulture);
+                object obj = ResourceManager.GetObject("settings_cancel_40", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -505,7 +775,17 @@ namespace PasswordManager.App.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap settings_save_40 {
             get {
-                object obj = ResourceManager.GetObject("settings.save.40", resourceCulture);
+                object obj = ResourceManager.GetObject("settings_save_40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap settings1 {
+            get {
+                object obj = ResourceManager.GetObject("settings1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -523,6 +803,16 @@ namespace PasswordManager.App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap trash {
+            get {
+                object obj = ResourceManager.GetObject("trash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap twitterIcon {
             get {
                 object obj = ResourceManager.GetObject("twitterIcon", resourceCulture);
@@ -533,9 +823,29 @@ namespace PasswordManager.App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap upload {
+            get {
+                object obj = ResourceManager.GetObject("upload", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap user_blue {
             get {
-                object obj = ResourceManager.GetObject("user-blue", resourceCulture);
+                object obj = ResourceManager.GetObject("user_blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_red {
+            get {
+                object obj = ResourceManager.GetObject("user_red", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
