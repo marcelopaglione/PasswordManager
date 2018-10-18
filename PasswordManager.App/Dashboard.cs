@@ -21,11 +21,13 @@ namespace PasswordManager.App
         public Dashboard(User user)
         {
             InitializeComponent();
-            
+
+            SetTooltipes();
+
             this.user = user;
 
             LoadSettings(user.Settings);
-        }
+        }        
 
         public void LoadSettings(Settings settings)
         {
@@ -320,6 +322,20 @@ namespace PasswordManager.App
         {
             lblMassege.Text = Message;
             lblMassege.ForeColor = FontColor;
+        }
+
+        public void SetTooltipes()
+        {
+            new ToolTip().SetToolTip(this.btnTitle, "[H]ome");
+            new ToolTip().SetToolTip(this.btnGuide, "[G]uide");
+            new ToolTip().SetToolTip(this.btnSearchPassword, "[S]earch Password");
+            new ToolTip().SetToolTip(this.btnLogout, "Logout");
+            new ToolTip().SetToolTip(this.btnAbout, "[A]bout");
+            new ToolTip().SetToolTip(this.btnSettings, "Se[t]tings");
+            new ToolTip().SetToolTip(this.btnExportPasswords, "Export");
+            new ToolTip().SetToolTip(this.btnImportPasswords, "Import");
+            new ToolTip().SetToolTip(this.btnNewPassword, "[N]ew Password");
+            new ToolTip().SetToolTip(this.btnMasterPassword, "[M]aster Password");
         }
 
         private void OpenByShortCut(object sender, KeyEventArgs e)
