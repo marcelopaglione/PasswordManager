@@ -39,7 +39,7 @@ namespace PasswordManager.App
 
         private bool IsEnable()
         {
-            if (Verifier.Text(txtName.Text) && Verifier.Text(txtPassword.Text) && Verifier.Email(txtEmail.Text))
+            if (Verifier.Text(txtName.Text) && Verifier.Text(txtPassword.Text))
                 return true;
             return false;
         }
@@ -66,7 +66,7 @@ namespace PasswordManager.App
             {
                 UserID = user.ID,
                 Name = txtName.Text,
-                Email = txtEmail.Text,
+                Email = txtEmail.Text.Equals("") ? "bear@pass.com" : txtEmail.Text,
                 Username = txtUsername.Text,
                 Website = txtWebsite.Text,
                 Text = txtPassword.Text,
