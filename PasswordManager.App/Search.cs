@@ -17,6 +17,7 @@ namespace PasswordManager.App
         public Search()
         {
             InitializeComponent();
+            this.ActiveControl = txtSearchPassword;
         }
 
         private void CloseWindow(object sender, KeyEventArgs e)

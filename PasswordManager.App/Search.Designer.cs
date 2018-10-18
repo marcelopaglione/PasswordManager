@@ -41,8 +41,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnSearchPassword = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtSearchPassword
@@ -50,15 +52,15 @@
             this.txtSearchPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(246)))));
             this.txtSearchPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSearchPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(64)))));
-            this.txtSearchPassword.Location = new System.Drawing.Point(88, 16);
+            this.txtSearchPassword.Location = new System.Drawing.Point(87, 19);
             this.txtSearchPassword.Name = "txtSearchPassword";
-            this.txtSearchPassword.Size = new System.Drawing.Size(167, 25);
+            this.txtSearchPassword.Size = new System.Drawing.Size(232, 25);
             this.txtSearchPassword.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 19);
+            this.label2.Location = new System.Drawing.Point(8, 21);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 17);
             this.label2.TabIndex = 17;
@@ -68,7 +70,7 @@
             // 
             this.panel2.Controls.Add(this.rdbOptionEquals);
             this.panel2.Controls.Add(this.rdbOptionContains);
-            this.panel2.Location = new System.Drawing.Point(88, 90);
+            this.panel2.Location = new System.Drawing.Point(87, 105);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(283, 35);
             this.panel2.TabIndex = 47;
@@ -102,7 +104,7 @@
             this.panel1.Controls.Add(this.rdbLookUsername);
             this.panel1.Controls.Add(this.rdbLookName);
             this.panel1.Controls.Add(this.rdbLookEmail);
-            this.panel1.Location = new System.Drawing.Point(88, 54);
+            this.panel1.Location = new System.Drawing.Point(87, 69);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(283, 35);
             this.panel1.TabIndex = 46;
@@ -145,7 +147,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 61);
+            this.label1.Location = new System.Drawing.Point(8, 76);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 17);
             this.label1.TabIndex = 44;
@@ -154,7 +156,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 97);
+            this.label3.Location = new System.Drawing.Point(13, 112);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 17);
             this.label3.TabIndex = 45;
@@ -172,28 +174,37 @@
             this.btnSearchPassword.ForeColor = System.Drawing.Color.White;
             this.btnSearchPassword.Image = global::PasswordManager.App.Properties.Resources.filter;
             this.btnSearchPassword.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearchPassword.Location = new System.Drawing.Point(257, 8);
+            this.btnSearchPassword.Location = new System.Drawing.Point(325, 9);
             this.btnSearchPassword.Name = "btnSearchPassword";
-            this.btnSearchPassword.Size = new System.Drawing.Size(110, 37);
+            this.btnSearchPassword.Size = new System.Drawing.Size(45, 45);
             this.btnSearchPassword.TabIndex = 2;
-            this.btnSearchPassword.Text = "Search";
-            this.btnSearchPassword.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSearchPassword.UseVisualStyleBackColor = false;
             this.btnSearchPassword.Click += new System.EventHandler(this.btnSearchPassword_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.txtSearchPassword);
+            this.panel3.Controls.Add(this.btnSearchPassword);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(64)))));
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(384, 63);
+            this.panel3.TabIndex = 48;
             // 
             // Search
             // 
             this.AcceptButton = this.btnSearchPassword;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(115)))), ((int)(((byte)(158)))));
-            this.ClientSize = new System.Drawing.Size(379, 134);
+            this.ClientSize = new System.Drawing.Size(384, 154);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.btnSearchPassword);
-            this.Controls.Add(this.txtSearchPassword);
-            this.Controls.Add(this.label2);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -211,6 +222,8 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -229,5 +242,6 @@
         public System.Windows.Forms.RadioButton rdbLookEmail;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel3;
     }
 }
