@@ -247,20 +247,45 @@ namespace PasswordManager.Services
                     }
                     else
                     {
+                        string notContains = string.Empty;
+                        string contains = string.Empty;
+                        int indexPosition = Search.ToLower().LastIndexOf('^');
+                        if (indexPosition > 0)
+                        {
+                            contains = Search.ToLower().Substring(0, Search.ToLower().LastIndexOf('^')).Trim();
+                            notContains = Search.ToLower().Substring(Search.ToLower().LastIndexOf('^')).Replace("^", "").Trim();
+                        }
+                        else
+                        {
+                            contains = Search.ToLower();
+                        }
+                        
                         switch (Options)
                         {
                             case "Contains":
                                 if (LooksFor == "Username")
-                                {
-                                    searchedPasswords = AllPasswords.Where(p => Search.ToLower().Split(' ').Any(inner => p.Username.ToLower().Contains(inner))).ToList();
+                                {                                   
+                                    searchedPasswords = AllPasswords.Where(p => contains.Split(' ').Any(inner => p.Username.ToLower().Trim().Contains(inner))).ToList();
+                                    if (indexPosition > 0)
+                                    {
+                                        searchedPasswords.RemoveAll(p => notContains.Split(' ').Any(inner => p.Username.ToLower().Trim().Contains(inner)));
+                                    }
                                 }
                                 else if (LooksFor == "Email")
                                 {
-                                    searchedPasswords = AllPasswords.Where(p => Search.ToLower().Split(' ').Any(inner => p.Email.ToLower().Contains(inner))).ToList();                                    
+                                    searchedPasswords = AllPasswords.Where(p => contains.Split(' ').Any(inner => p.Email.ToLower().Trim().Contains(inner))).ToList();
+                                    if (indexPosition > 0)
+                                    {
+                                        searchedPasswords.RemoveAll(p => notContains.Split(' ').Any(inner => p.Email.ToLower().Trim().Contains(inner)));
+                                    }
                                 }
                                 else
                                 {
-                                    searchedPasswords = AllPasswords.Where(p => Search.ToLower().Split(' ').Any(inner => p.Name.ToLower().Contains(inner)) ).ToList();
+                                    searchedPasswords = AllPasswords.Where(p => contains.Split(' ').Any(inner => p.Name.ToLower().Trim().Contains(inner))).ToList();
+                                    if (indexPosition > 0)
+                                    {
+                                        searchedPasswords.RemoveAll(p => notContains.Split(' ').Any(inner => p.Name.ToLower().Trim().Contains(inner)));
+                                    }
                                 }
                                 break;
                             case "Equals":
