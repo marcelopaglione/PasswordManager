@@ -51,19 +51,28 @@
             this.TitlePanel = new System.Windows.Forms.Panel();
             this.TitlePictureBox = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dataGridHistory = new System.Windows.Forms.DataGridView();
+            this.History = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             this.TitlePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TitlePictureBox)).BeginInit();
             this.panel1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridHistory)).BeginInit();
             this.SuspendLayout();
             // 
             // rtxtNotes
             // 
             this.rtxtNotes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(246)))));
             this.rtxtNotes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(64)))));
-            this.rtxtNotes.Location = new System.Drawing.Point(164, 90);
+            this.rtxtNotes.Location = new System.Drawing.Point(6, 3);
             this.rtxtNotes.Name = "rtxtNotes";
-            this.rtxtNotes.Size = new System.Drawing.Size(525, 100);
+            this.rtxtNotes.Size = new System.Drawing.Size(507, 151);
             this.rtxtNotes.TabIndex = 6;
             this.rtxtNotes.Text = "";
             this.rtxtNotes.TextChanged += new System.EventHandler(this.ForSaveBtnEnable);
@@ -102,8 +111,8 @@
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
+            this.panel2.Controls.Add(this.tabControl1);
             this.panel2.Controls.Add(this.btnCancel);
-            this.panel2.Controls.Add(this.rtxtNotes);
             this.panel2.Controls.Add(this.btnOptions);
             this.panel2.Controls.Add(this.txtPassword);
             this.panel2.Controls.Add(this.label4);
@@ -111,9 +120,9 @@
             this.panel2.Controls.Add(this.btnGenerate);
             this.panel2.Controls.Add(this.label7);
             this.panel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(64)))));
-            this.panel2.Location = new System.Drawing.Point(0, 215);
+            this.panel2.Location = new System.Drawing.Point(0, 214);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(784, 246);
+            this.panel2.Size = new System.Drawing.Size(784, 347);
             this.panel2.TabIndex = 60;
             // 
             // btnCancel
@@ -128,7 +137,7 @@
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Image = global::PasswordManager.App.Properties.Resources.close;
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.Location = new System.Drawing.Point(163, 196);
+            this.btnCancel.Location = new System.Drawing.Point(163, 293);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(110, 42);
             this.btnCancel.TabIndex = 8;
@@ -168,7 +177,7 @@
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Image = global::PasswordManager.App.Properties.Resources.floppy_disk;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(279, 196);
+            this.btnSave.Location = new System.Drawing.Point(279, 293);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(110, 42);
             this.btnSave.TabIndex = 7;
@@ -340,20 +349,69 @@
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(784, 461);
+            this.panel1.Size = new System.Drawing.Size(784, 561);
             this.panel1.TabIndex = 51;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(163, 93);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(527, 194);
+            this.tabControl1.TabIndex = 24;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.rtxtNotes);
+            this.tabPage1.Location = new System.Drawing.Point(4, 30);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(519, 160);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Notes";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.dataGridHistory);
+            this.tabPage2.Location = new System.Drawing.Point(4, 30);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(519, 160);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Password History";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dataGridHistory
+            // 
+            this.dataGridHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridHistory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.History});
+            this.dataGridHistory.Location = new System.Drawing.Point(3, 4);
+            this.dataGridHistory.Name = "dataGridHistory";
+            this.dataGridHistory.Size = new System.Drawing.Size(510, 153);
+            this.dataGridHistory.TabIndex = 0;
+            // 
+            // History
+            // 
+            this.History.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.History.HeaderText = "History";
+            this.History.Name = "History";
+            this.History.ReadOnly = true;
             // 
             // UpdatePassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 461);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
-            this.MaximumSize = new System.Drawing.Size(800, 500);
-            this.MinimumSize = new System.Drawing.Size(800, 500);
+            this.MaximumSize = new System.Drawing.Size(800, 600);
+            this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "UpdatePassword";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
@@ -368,6 +426,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.TitlePictureBox)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridHistory)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -396,5 +458,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel TitlePanel;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.DataGridView dataGridHistory;
+        private System.Windows.Forms.DataGridViewTextBoxColumn History;
     }
 }

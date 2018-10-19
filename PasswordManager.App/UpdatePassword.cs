@@ -3,6 +3,7 @@ using PasswordManager.Globals;
 using PasswordManager.Services;
 using PasswordManager.Theme;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace PasswordManager.App
@@ -30,6 +31,18 @@ namespace PasswordManager.App
             rtxtNotes.Text = password.Notes;
             
             btnSave.Enabled = IsEnable();
+
+            try
+            {
+                List<PasswordHistory> pass = PasswordsService.Instance().GetAllUserPasswordHistory(user, this.password);
+                dataGridHistory.Rows.Clear();
+                pass.ForEach(p => dataGridHistory.Rows.Add(p.GetToString()));
+            }
+            catch (Exception ex)
+            {
+                Messenger.Show(ex.Message + " " + ex.HResult, "Error");
+            }            
+            
         }
 
         private async void btnSave_Click(object sender, EventArgs e)

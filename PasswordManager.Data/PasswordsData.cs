@@ -48,6 +48,11 @@ namespace PasswordManager.Data
             return Database.UpdatePasswordByUserID(user.ID, password);
         }
 
+        public List<PasswordHistory> GetPasswordsHistoryByUserID(User user, Password password)
+        {
+            return Database.GetPasswordsHistoryByUserID(user.ID, password);
+        }
+
         public int UpdateUserPasswords(User user, List<Password> passwords)
         {
             return Database.UpdatePasswordsByUserID(user.ID, passwords);

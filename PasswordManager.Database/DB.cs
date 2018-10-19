@@ -233,7 +233,7 @@ namespace PasswordManager.Database
                     AffectedRows = command.ExecuteNonQuery();
                 }
             }
-            AddNewPasswordHistory(userID, password, "INSERT");
+            AddNewPasswordHistory(userID, password, System.Reflection.MethodBase.GetCurrentMethod().Name);
             return AffectedRows;
         }
 
@@ -241,24 +241,8 @@ namespace PasswordManager.Database
         /// Add New Password to Database.
         /// </summary>
         /// <returns>Add History Password.</returns>
-        public int AddNewPasswordHistory(int userID, Password passwordBefore, string operation)
-        {
-            Password passwordAfter;
-            if (operation.Equals("DELETE"))
-            {
-                passwordAfter = null;
-            }
-            else
-            if (operation.Equals("INSERT")){
-                passwordAfter = GetPasswordByNameEmailAndUsername(passwordBefore.Name, passwordBefore.Email, passwordBefore.Username);
-                passwordBefore.ID = passwordAfter.ID;
-                passwordAfter = null;
-            }
-            else
-            {
-                passwordAfter = GetPasswordByID(passwordBefore.ID);
-            }
-
+        public int AddNewPasswordHistory(int userID, Password password, string operation)
+        {        
             int AffectedRows = -1;
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
@@ -273,16 +257,44 @@ namespace PasswordManager.Database
                 {
                     command.Parameters.Add(new SqlParameter("@UserID", userID));
                     command.Parameters.Add(new SqlParameter("@Operation", operation));
-                    command.Parameters.Add(new SqlParameter("@PasswordID", passwordBefore.ID));
-                    
 
-                    AddSQLParameter(command, passwordBefore.Username, passwordAfter?.Username, "@Username");
-                    AddSQLParameter(command, passwordBefore.Name, passwordAfter?.Name, "@Name");
-                    AddSQLParameter(command, passwordBefore.Email, passwordAfter?.Email, "@Email");
-                    AddSQLParameter(command, passwordBefore.Website, passwordAfter?.Website, "@Website");
-                    AddSQLParameter(command, passwordBefore.Text, passwordAfter?.Text, "@Text");
-                    AddSQLParameter(command, passwordBefore.Notes, passwordAfter?.Notes, "@Notes");
-                    AddSQLParameter(command, passwordBefore.DateModified.ToString(), passwordAfter?.DateModified.ToString(), "@DateModified");                    
+                    Password pwAfter;
+                    if (operation.Contains("Add"))
+                    {
+                        pwAfter = GetLastPasswordIntertedByUserID(password.UserID);
+                        command.Parameters.Add(new SqlParameter("@PasswordID", pwAfter.ID));
+                        SetSQLParameters(command, password?.Username,   null, "Username");
+                        SetSQLParameters(command, password?.Name,       null, "Name");
+                        SetSQLParameters(command, password?.Email,      null, "Email");
+                        SetSQLParameters(command, password?.Website,    null, "Website");
+                        SetSQLParameters(command, password?.Text,       null, "Text");
+                        SetSQLParameters(command, password?.Notes,      null, "Notes");
+                        SetSQLParameters(command, password?.DateModified.ToString(), null, "DateModified");
+                    }
+                    else if (operation.Contains("Update"))
+                    {
+                        pwAfter = GetPasswordByID(password.ID);
+                        command.Parameters.Add(new SqlParameter("@PasswordID", pwAfter.ID));
+                        SetSQLParameters(command, password?.Username,   pwAfter?.Username,  "Username");
+                        SetSQLParameters(command, password?.Name,       pwAfter?.Name,      "Name");
+                        SetSQLParameters(command, password?.Email,      pwAfter?.Email,     "Email");
+                        SetSQLParameters(command, password?.Website,    pwAfter?.Website,   "Website");
+                        SetSQLParameters(command, password?.Text,       pwAfter?.Text,      "Text");
+                        SetSQLParameters(command, password?.Notes,      pwAfter?.Notes,     "Notes");
+                        SetSQLParameters(command, password?.DateModified.ToString(), pwAfter?.DateModified.ToString(), "DateModified");
+                    }
+                    else
+                    {
+                        command.Parameters.Add(new SqlParameter("@PasswordID", password.ID));
+                        SetSQLParameters(command, null, null, "Username");
+                        SetSQLParameters(command, null, null, "Name");
+                        SetSQLParameters(command, null, null, "Email");
+                        SetSQLParameters(command, null, null, "Website");
+                        SetSQLParameters(command, null, null, "Text");
+                        SetSQLParameters(command, null, null, "Notes");
+                        SetSQLParameters(command, null, null, "DateModified");
+                    }
+
 
                     connection.Open();
 
@@ -293,29 +305,78 @@ namespace PasswordManager.Database
             return AffectedRows;
         }
 
-        private void AddSQLParameter(SqlCommand command,string passwordBefore, string passwordAfter,string parameterName)
+        private void SetSQLParameters(SqlCommand command, string passwordBefore, string passwordAfter, string parameterName)
         {
-            if (passwordAfter == null && passwordBefore != null)
+            if (passwordBefore == null && (passwordAfter == null))
             {
-                command.Parameters.Add(new SqlParameter($"{parameterName.Replace("@","")}Before", passwordBefore));
-                command.Parameters.Add(new SqlParameter($"{parameterName.Replace("@", "")}After", DBNull.Value));
+                command.Parameters.Add(new SqlParameter($"@{parameterName}Before",  DBNull.Value));
+                command.Parameters.Add(new SqlParameter($"@{parameterName}After",   DBNull.Value));
             }
-            else
-            if (!ComparePasswordDetail(passwordBefore, passwordAfter))
+            else if (passwordBefore == null)
             {
-                command.Parameters.Add(new SqlParameter($"{parameterName.Replace("@", "")}Before", passwordBefore));
-                command.Parameters.Add(new SqlParameter($"{parameterName.Replace("@", "")}After", passwordAfter));
+                command.Parameters.Add(new SqlParameter($"@{parameterName}Before",  DBNull.Value));
+                command.Parameters.Add(new SqlParameter($"@{parameterName}After",   passwordAfter));
+            }
+            else if (passwordAfter == null)
+            {
+                command.Parameters.Add(new SqlParameter($"@{parameterName}Before",  passwordBefore));
+                command.Parameters.Add(new SqlParameter($"@{parameterName}After",   DBNull.Value));
+            }
+            else if (!(passwordBefore == passwordAfter))
+            {
+                command.Parameters.Add(new SqlParameter($"@{parameterName}Before",  passwordBefore));
+                command.Parameters.Add(new SqlParameter($"@{parameterName}After",   passwordAfter));
             }            
             else
             {
-                command.Parameters.Add(new SqlParameter($"{parameterName.Replace("@", "")}Before", DBNull.Value));
-                command.Parameters.Add(new SqlParameter($"{parameterName.Replace("@", "")}After", DBNull.Value));
+                command.Parameters.Add(new SqlParameter($"@{parameterName}Before",  DBNull.Value));
+                command.Parameters.Add(new SqlParameter($"@{parameterName}After",   DBNull.Value));
             }
-        }
+        }        
 
-        private bool ComparePasswordDetail(string detailBefore, string detailAfter)
+        /// <summary>
+        /// Get List of Passwords.
+        /// </summary>
+        /// <param name="userID">User ID for Passwords</param>
+        /// <returns>List of Passwords.</returns>
+        public Password GetLastPasswordIntertedByUserID(int ID)
         {
-            return detailAfter==detailBefore;
+            List<Password> passwords = new List<Password>();
+
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                string sql = "Select top 1 * from Passwords where UserID = @ID order by ID DESC";
+                //string sqlNoFilter = "Select * from Passwords order by Name DESC";
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.Add(new SqlParameter("@ID", ID));
+
+                    connection.Open();
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    Password password;
+
+                    while (reader.Read())
+                    {
+                        password = new Password();
+                        password.ID = Convert.ToInt32(reader["ID"]);
+                        password.UserID = Convert.ToInt32(reader["UserID"]);
+                        password.Name = reader["Name"].ToString();
+                        password.Email = reader["Email"].ToString();
+                        password.Username = reader["Username"].ToString();
+                        password.Website = reader["Website"].ToString();
+                        password.Text = reader["Text"].ToString();
+                        password.Notes = reader["Notes"].ToString();
+                        password.DateCreated = Convert.ToDateTime(reader["DateCreated"].ToString());
+                        password.DateModified = Convert.ToDateTime(reader["DateModified"].ToString());
+
+                        passwords.Add(password);
+                    }
+                }
+            }
+
+            return passwords.FirstOrDefault();
         }
 
 
@@ -444,6 +505,7 @@ namespace PasswordManager.Database
                         AffectedRows += command.ExecuteNonQuery();
                     }
                 }
+                AddNewPasswordHistory(userID, password, System.Reflection.MethodBase.GetCurrentMethod().Name);
             }
 
             return AffectedRows;
@@ -503,7 +565,7 @@ namespace PasswordManager.Database
         public int UpdatePasswordByUserID(int userID, Password password)
         {
             Password passwordBefore = GetPasswordByID(password.ID);
-            int AffectedRows = 0;            
+            int AffectedRows = 0;
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand(
@@ -525,8 +587,56 @@ namespace PasswordManager.Database
                     AffectedRows = command.ExecuteNonQuery();
                 }
             }
-            AddNewPasswordHistory(userID, passwordBefore, "UPDATE");
+            AddNewPasswordHistory(userID, passwordBefore, System.Reflection.MethodBase.GetCurrentMethod().Name);
             return AffectedRows;
+        }
+
+        public List<PasswordHistory> GetPasswordsHistoryByUserID(int userID, Password passwordCurrent)
+        {
+            List<PasswordHistory> passwords = new List<PasswordHistory>();
+
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                string sql = "Select * from PasswordsHistory where UserID = @UserID AND PasswordID = @PWID order by ID DESC";
+                //string sqlNoFilter = "Select * from Passwords order by Name DESC";
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.Add(new SqlParameter("@UserID", userID));
+                    command.Parameters.Add(new SqlParameter("@PWID", passwordCurrent.ID));
+
+                    connection.Open();
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    PasswordHistory password;
+
+                    while (reader.Read())
+                    {
+                        password = new PasswordHistory();
+                        password.ID = Convert.ToInt32(reader["ID"]);
+                        password.UserID = userID;
+                        password.NameBefore = reader["NameBefore"].ToString();
+                        password.EmailBefore = reader["EmailBefore"].ToString();
+                        password.UsernameBefore = reader["UsernameBefore"].ToString();
+                        password.WebsiteBefore = reader["WebsiteBefore"].ToString();
+                        password.TextBefore = reader["TextBefore"].ToString();
+                        password.NotesBefore = reader["NotesBefore"].ToString();
+                        password.DateModifiedBefore = reader["DateModifiedBefore"].ToString();
+
+                        password.NameAfter = reader["NameAfter"].ToString();
+                        password.EmailAfter = reader["EmailAfter"].ToString();
+                        password.UsernameAfter = reader["UsernameAfter"].ToString();
+                        password.WebsiteAfter = reader["WebsiteAfter"].ToString();
+                        password.TextAfter = reader["TextAfter"].ToString();
+                        password.NotesAfter = reader["NotesAfter"].ToString();
+                        password.DateModifiedAfter = reader["DateModifiedAfter"].ToString();
+
+                        passwords.Add(password);
+                    }
+                }
+            }
+
+            return passwords;
         }
 
         /// <summary>
@@ -571,11 +681,7 @@ namespace PasswordManager.Database
                     AffectedRows = command.ExecuteNonQuery();
                 }
             }
-            Password p = new Password()
-            {
-                ID = passwordID
-            };
-            AddNewPasswordHistory(userID, p, "DELETE");
+            AddNewPasswordHistory(userID, new Password() { ID = passwordID }, System.Reflection.MethodBase.GetCurrentMethod().Name);
             return AffectedRows;
         }
 

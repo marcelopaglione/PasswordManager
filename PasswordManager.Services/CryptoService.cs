@@ -151,6 +151,22 @@ namespace PasswordManager.Services
             return password;
         }
 
+        public PasswordHistory DecryptUserPassword(User user, PasswordHistory password)
+        {
+            if (Verifier.Text(password.NameAfter)) password.NameAfter = Gulipso.Gulipso.Decrypt(password.NameAfter, user.Master, Globals.Defaults.InitVector, Globals.Defaults.KeySize);
+            if (Verifier.Text(password.EmailAfter)) password.EmailAfter = Gulipso.Gulipso.Decrypt(password.EmailAfter, user.Master, Globals.Defaults.InitVector, Globals.Defaults.KeySize);
+            if (Verifier.Text(password.UsernameAfter)) password.UsernameAfter = Gulipso.Gulipso.Decrypt(password.UsernameAfter, user.Master, Globals.Defaults.InitVector, Globals.Defaults.KeySize);
+            if (Verifier.Text(password.WebsiteAfter)) password.WebsiteAfter = Gulipso.Gulipso.Decrypt(password.WebsiteAfter, user.Master, Globals.Defaults.InitVector, Globals.Defaults.KeySize);
+            if (Verifier.Text(password.TextAfter)) password.TextAfter = Gulipso.Gulipso.Decrypt(password.TextAfter, user.Master, Globals.Defaults.InitVector, Globals.Defaults.KeySize);
+
+            if (Verifier.Text(password.NameBefore)) password.NameBefore = Gulipso.Gulipso.Decrypt(password.NameBefore, user.Master, Globals.Defaults.InitVector, Globals.Defaults.KeySize);
+            if (Verifier.Text(password.EmailBefore)) password.EmailBefore = Gulipso.Gulipso.Decrypt(password.EmailBefore, user.Master, Globals.Defaults.InitVector, Globals.Defaults.KeySize);
+            if (Verifier.Text(password.UsernameBefore)) password.UsernameBefore = Gulipso.Gulipso.Decrypt(password.UsernameBefore, user.Master, Globals.Defaults.InitVector, Globals.Defaults.KeySize);
+            if (Verifier.Text(password.WebsiteBefore)) password.WebsiteBefore = Gulipso.Gulipso.Decrypt(password.WebsiteBefore, user.Master, Globals.Defaults.InitVector, Globals.Defaults.KeySize);
+            if (Verifier.Text(password.TextBefore)) password.TextBefore = Gulipso.Gulipso.Decrypt(password.TextBefore, user.Master, Globals.Defaults.InitVector, Globals.Defaults.KeySize);
+            return password;
+        }
+
         /// <summary>
         /// Decrypted the List of Passwords for supplied User.
         /// </summary>
@@ -181,11 +197,22 @@ namespace PasswordManager.Services
         {
             List<Password> decryptedPasswords = new List<Password>();
 
-                foreach (var password in passwords)
-                {
-                    decryptedPasswords.Add(DecryptUserPassword(user, password));
-                }
-                return decryptedPasswords;
+            foreach (var password in passwords)
+            {
+                decryptedPasswords.Add(DecryptUserPassword(user, password));
+            }
+            return decryptedPasswords;
+        }
+
+        public List<PasswordHistory> DecryptUserPasswords(User user, List<PasswordHistory> passwords)
+        {
+            List<PasswordHistory> decryptedPasswords = new List<PasswordHistory>();
+
+            foreach (var password in passwords)
+            {
+                decryptedPasswords.Add(DecryptUserPassword(user, password));
+            }
+            return decryptedPasswords;
         }
     }
 }

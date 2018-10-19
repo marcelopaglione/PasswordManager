@@ -59,6 +59,22 @@ namespace PasswordManager.Services
             });
         }
 
+        public List<PasswordHistory> GetAllUserPasswordHistory(User user, Password password)
+        {
+            if (ValidationService.Instance().User(user))
+            {
+                //List<Password> passwords = CryptoService.Instance().Decrypt(user, PasswordsData.Instance().GetUserPasswords(user));
+                List<PasswordHistory> passwords = PasswordsData.Instance().GetPasswordsHistoryByUserID(user, password);
+
+                if (passwords != null)//i am not using the validation service here because passwords are not yet decrypted and may return false when validation called -gul:0401171228
+                {
+                    return passwords = CryptoService.Instance().DecryptUserPasswords(user, passwords);                    
+                }
+                else return null;
+            }
+            else return null;
+        }
+
 
         /// <summary>
         /// Gets All Passwords for the Supplied User.
