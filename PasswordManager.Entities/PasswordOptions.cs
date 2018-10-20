@@ -33,7 +33,7 @@ namespace PasswordManager.Entities
         public string LowercaseCharacters = "abcdefghijklmnopqrstuvwxyz";
         public string UppercaseCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         public string NumberCharacters = "0123456789";
-        public string SpecialCharacters = @"~!@#$%^&*():;[]{}<>,.?/\|";
+        public string SpecialCharacters = @"!@#$%&*";
         public string UnderscoreCharacters = "_";
         public string SpaceCharacters = " ";
         public string OtherCharacters = null;

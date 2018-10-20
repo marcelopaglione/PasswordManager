@@ -36,57 +36,39 @@ namespace PasswordManager.Entities
         {
             StringBuilder passwordHistory = new StringBuilder();
             passwordHistory.Append($"{nameof(ID)}: ").Append(ID).Append(Environment.NewLine);
-            if (NameBefore != null)
+            if (!NameBefore.Equals("") || !NameAfter.Equals(""))
             {
                 passwordHistory.Append($"{nameof(NameBefore)}: ").Append(NameBefore).Append(Environment.NewLine);
-            }
-            if (NameAfter != null)
-            {
                 passwordHistory.Append($"{nameof(NameAfter)}: ").Append(NameAfter).Append(Environment.NewLine);
             }
 
-            if (EmailBefore != null)
+            if (!EmailBefore.Equals("") | !(EmailAfter.Equals("")))
             {
                 passwordHistory.Append($"{nameof(EmailBefore)}: ").Append(EmailBefore).Append(Environment.NewLine);
-            }
-            if (EmailAfter != null)
-            {
                 passwordHistory.Append($"{nameof(EmailAfter)}: ").Append(EmailAfter).Append(Environment.NewLine);
             }
 
-            if (UsernameBefore != null)
+            if (!UsernameBefore.Equals("") | !(UsernameAfter.Equals("")))
             {
                 passwordHistory.Append($"{nameof(UsernameBefore)}: ").Append(UsernameBefore).Append(Environment.NewLine);
-            }
-            if (UsernameAfter != null)
-            {
                 passwordHistory.Append($"{nameof(UsernameAfter)}: ").Append(UsernameAfter).Append(Environment.NewLine);
             }
 
-            if (WebsiteBefore != null)
+            if (!WebsiteBefore.Equals("") | !(WebsiteAfter.Equals("")))
             {
                 passwordHistory.Append($"{nameof(WebsiteBefore)}: ").Append(WebsiteBefore).Append(Environment.NewLine);
-            }
-            if (WebsiteAfter != null)
-            {
                 passwordHistory.Append($"{nameof(WebsiteAfter)}: ").Append(WebsiteAfter).Append(Environment.NewLine);
             }
 
-            if (TextBefore != null)
+            if (!TextBefore.Equals("") | !(TextAfter.Equals("")))
             {
                 passwordHistory.Append($"{nameof(TextBefore)}: ").Append(TextBefore).Append(Environment.NewLine);
-            }
-            if (TextAfter != null)
-            {
                 passwordHistory.Append($"{nameof(TextAfter)}: ").Append(TextAfter).Append(Environment.NewLine);
             }
 
-            if (NotesBefore != null)
+            if (!NotesBefore.Equals("") | !(NotesAfter.Equals("")))
             {
                 passwordHistory.Append($"{nameof(NotesBefore)}: ").Append(NotesBefore).Append(Environment.NewLine);
-            }
-            if (NotesAfter != null)
-            {
                 passwordHistory.Append($"{nameof(NotesAfter)}: ").Append(NotesAfter).Append(Environment.NewLine);
             }
 

@@ -361,18 +361,20 @@ namespace PasswordManager.Services
                 // Satisfy requirements.
                 string password = "";
 
+                password = GenerateRandomWord(RequiredLength-(int)(RequiredLength*0.5));
+
                 if (passwordOptions.RequireLowercaseCharacters &&
                     (password.IndexOfAny(passwordOptions.LowercaseCharacters.ToCharArray()) == -1))
                     password += RandomCharacter(passwordOptions.LowercaseCharacters, random);
                 if (passwordOptions.RequireUppercaseCharacters &&
                     (password.IndexOfAny(passwordOptions.UppercaseCharacters.ToCharArray()) == -1))
-                    password += RandomCharacter(passwordOptions.UppercaseCharacters, random);
+                    password = AddUpperCaseOnString(password);
                 if (passwordOptions.RequireNumberCharacters &&
                     (password.IndexOfAny(passwordOptions.NumberCharacters.ToCharArray()) == -1))
                     password += RandomCharacter(passwordOptions.NumberCharacters, random);
                 if (passwordOptions.RequireSpecialCharacters &&
                     (password.IndexOfAny(passwordOptions.SpecialCharacters.ToCharArray()) == -1))
-                    password += RandomCharacter(passwordOptions.SpecialCharacters, random);
+                    password = RandomCharacter(passwordOptions.SpecialCharacters, random)+password;
                 if (passwordOptions.RequireUnderscoreCharacters &&
                     (password.IndexOfAny(passwordOptions.UnderscoreCharacters.ToCharArray()) == -1))
                     password += passwordOptions.UnderscoreCharacters;
@@ -383,16 +385,80 @@ namespace PasswordManager.Services
                     (password.IndexOfAny(passwordOptions.OtherCharacters.ToCharArray()) == -1))
                     password += passwordOptions.OtherCharacters;
 
+                password = GenerateRandomWord(RequiredLength - password.Length) + password;
+
                 // Add the remaining characters randomly.
                 while (password.Length < RequiredLength)
                     password += allowed.Substring(
                         random.Next(0, allowed.Length - 1), 1);
 
                 // Randomize (to mix up the required characters at the front).
-                password = RandomizeString(password, random);
+                //password = RandomizeString(password, random);
 
                 return password;
             });
+        }
+
+        private string AddUpperCaseOnString(string randomc)
+        {
+            //a-z -> 97-122
+            //A-Z -> 65-90            
+            Random random = new Random();
+
+            int randBetweenMax = random.Next(randomc.Length);
+            randomc = randBetweenMax >= 0 ? randomc.Insert(randBetweenMax, @""): randomc;
+
+            if (randomc.ElementAt(randBetweenMax) >= 97 && randomc.ElementAt(randBetweenMax) <= 122)
+            {
+                randomc.ReplaceFirstOccurrance("", "");// randomc.ElementAt(randBetweenMax), (char)(randomc.ElementAt(randBetweenMax) - 32));
+            }
+            else
+            {
+                randomc = randomc.Replace(randomc.ElementAt(randBetweenMax), (char)(randomc.ElementAt(randBetweenMax) + 32));
+            }
+            return randomc;
+        }
+
+        public static string ReplaceFirstOccurrance(this string original, string oldValue, string newValue)
+        {
+            if (String.IsNullOrEmpty(original))
+                return String.Empty;
+            if (String.IsNullOrEmpty(oldValue))
+                return original;
+            if (String.IsNullOrEmpty(newValue))
+                newValue = String.Empty;
+            int loc = original.IndexOf(oldValue);
+            return original.Remove(loc, oldValue.Length).Insert(loc, newValue);
+        }
+
+        private string GenerateRandomWord(int requestedLength)
+        {
+            Random rnd = new Random();
+            string[] consonants = { "b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z" };
+            string[] vowels = { "a", "e", "i", "o", "u" };
+
+            string word = "";
+
+            if (requestedLength == 1)
+            {
+                word = GetRandomLetter(rnd, vowels);
+            }
+            else
+            {
+                for (int i = 0; i < requestedLength; i += 2)
+                {
+                    word += GetRandomLetter(rnd, consonants) + GetRandomLetter(rnd, vowels);
+                }
+
+                word = word.Replace("q", "qu").Substring(0, requestedLength);
+            }
+
+            return word;
+        }
+
+        private static string GetRandomLetter(Random rnd, string[] letters)
+        {
+            return letters[rnd.Next(0, letters.Length - 1)];
         }
 
         /// <summary>
