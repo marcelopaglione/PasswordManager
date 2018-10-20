@@ -386,14 +386,10 @@ namespace PasswordManager.Services
                     password += passwordOptions.OtherCharacters;
 
                 password = GenerateRandomWord(RequiredLength - password.Length) + password;
-
-                // Add the remaining characters randomly.
+                
                 while (password.Length < RequiredLength)
                     password += allowed.Substring(
-                        random.Next(0, allowed.Length - 1), 1);
-
-                // Randomize (to mix up the required characters at the front).
-                //password = RandomizeString(password, random);
+                        random.Next(0, allowed.Length - 1), 1);                
 
                 return password;
             });
@@ -410,16 +406,16 @@ namespace PasswordManager.Services
 
             if (randomc.ElementAt(randBetweenMax) >= 97 && randomc.ElementAt(randBetweenMax) <= 122)
             {
-                randomc.ReplaceFirstOccurrance("", "");// randomc.ElementAt(randBetweenMax), (char)(randomc.ElementAt(randBetweenMax) - 32));
+                randomc = ReplaceFirstOccurrance(randomc, randomc.ElementAt(randBetweenMax).ToString(), ((char)(randomc.ElementAt(randBetweenMax) - 32)).ToString());
             }
             else
             {
-                randomc = randomc.Replace(randomc.ElementAt(randBetweenMax), (char)(randomc.ElementAt(randBetweenMax) + 32));
+                randomc = ReplaceFirstOccurrance(randomc, randomc.ElementAt(randBetweenMax).ToString(), ((char)(randomc.ElementAt(randBetweenMax) + 32)).ToString());
             }
             return randomc;
         }
 
-        public static string ReplaceFirstOccurrance(this string original, string oldValue, string newValue)
+        public static string ReplaceFirstOccurrance(string original, string oldValue, string newValue)
         {
             if (String.IsNullOrEmpty(original))
                 return String.Empty;
