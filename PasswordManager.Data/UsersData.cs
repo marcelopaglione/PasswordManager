@@ -51,6 +51,11 @@ namespace PasswordManager.Data
             return Database.GetUserByID(user.ID);
         }
 
+        public List<Reminder> ShowUserReminders(User user)
+        {
+            return Database.ListPasswordReminders(user);
+        }
+
         public User LoginUser(User user)
         {
             return Database.GetUserByUsename(user.Username);

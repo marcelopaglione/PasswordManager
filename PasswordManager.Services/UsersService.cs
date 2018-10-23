@@ -2,10 +2,13 @@
 using PasswordManager.Entities;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using Tulpep.NotificationWindow;
 
 namespace PasswordManager.Services
 {
@@ -63,6 +66,33 @@ namespace PasswordManager.Services
                     if (UsersData.Instance().AddNewUser(user, Globals.Defaults.Settings, Globals.Defaults.PasswordOptions) > 0)
                     {
                         return LoginUser(user);
+                    }
+                    else return null;
+                }
+                else return null;
+            });
+        }
+
+        public Task<List<Reminder>> ShowUserReminders(User user, NotifyIcon popupNotifier)
+        {
+            return Task.Factory.StartNew(() =>
+            {
+                if (ValidationService.Instance().User(user))
+                {
+                    List<Reminder> reminders = UsersData.Instance().ShowUserReminders(user);
+                    if (reminders.Count > 0)
+                    {
+                        DateTime today = DateTime.Now;
+                        reminders.ForEach(reminder =>
+                        {
+                        if (DateTime.Compare(today, reminder.ShowReminderDate) >= 1)
+                        {
+                            popupNotifier.Visible = true;
+                            Password pw = (CryptoService.Instance().DecryptUserPassword(user, reminder.ReminderPassword));
+                            popupNotifier.ShowBalloonTip(2000, "Bearpass Notification Center", $"Password for {pw.Name} Requires your attention! {reminder.ReminderText}", ToolTipIcon.Info);
+                        }
+                        });
+                        return reminders;
                     }
                     else return null;
                 }

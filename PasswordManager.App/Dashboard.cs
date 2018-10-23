@@ -365,5 +365,11 @@ namespace PasswordManager.App
                     break;
             }
         }
+
+        private void Reminders_Click(object sender, EventArgs e)
+        {
+            Reminder reminderForm = new Reminder();
+            reminderForm.ShowDialog();
+        }
     }
 }

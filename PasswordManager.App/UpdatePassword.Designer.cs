@@ -56,6 +56,12 @@
             this.TitlePanel = new System.Windows.Forms.Panel();
             this.TitlePictureBox = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dateTimePickerReminder = new System.Windows.Forms.DateTimePicker();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.reminderLabelText = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.buttonReminder = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -64,6 +70,7 @@
             this.TitlePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TitlePictureBox)).BeginInit();
             this.panel1.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // rtxtNotes
@@ -130,6 +137,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(163, 93);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -402,6 +410,75 @@
             this.panel1.Size = new System.Drawing.Size(784, 561);
             this.panel1.TabIndex = 51;
             // 
+            // dateTimePickerReminder
+            // 
+            this.dateTimePickerReminder.Location = new System.Drawing.Point(132, 41);
+            this.dateTimePickerReminder.Name = "dateTimePickerReminder";
+            this.dateTimePickerReminder.Size = new System.Drawing.Size(381, 29);
+            this.dateTimePickerReminder.TabIndex = 25;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.buttonReminder);
+            this.tabPage3.Controls.Add(this.label8);
+            this.tabPage3.Controls.Add(this.label6);
+            this.tabPage3.Controls.Add(this.reminderLabelText);
+            this.tabPage3.Controls.Add(this.dateTimePickerReminder);
+            this.tabPage3.Location = new System.Drawing.Point(4, 30);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(519, 160);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Set Reminders";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // reminderLabelText
+            // 
+            this.reminderLabelText.Location = new System.Drawing.Point(132, 6);
+            this.reminderLabelText.Name = "reminderLabelText";
+            this.reminderLabelText.Size = new System.Drawing.Size(381, 29);
+            this.reminderLabelText.TabIndex = 26;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(15, 14);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(111, 21);
+            this.label6.TabIndex = 27;
+            this.label6.Text = "Reminder Text:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(9, 47);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(117, 21);
+            this.label8.TabIndex = 28;
+            this.label8.Text = "Reminder Date:";
+            // 
+            // buttonReminder
+            // 
+            this.buttonReminder.BackColor = System.Drawing.Color.DarkCyan;
+            this.buttonReminder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonReminder.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonReminder.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.buttonReminder.FlatAppearance.BorderSize = 0;
+            this.buttonReminder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonReminder.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonReminder.ForeColor = System.Drawing.Color.White;
+            this.buttonReminder.Image = global::PasswordManager.App.Properties.Resources.floppy_disk;
+            this.buttonReminder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonReminder.Location = new System.Drawing.Point(132, 76);
+            this.buttonReminder.Name = "buttonReminder";
+            this.buttonReminder.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.buttonReminder.Size = new System.Drawing.Size(189, 42);
+            this.buttonReminder.TabIndex = 25;
+            this.buttonReminder.Text = "Create new Reminder";
+            this.buttonReminder.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonReminder.UseVisualStyleBackColor = false;
+            this.buttonReminder.Click += new System.EventHandler(this.buttonReminder_Click);
+            // 
             // UpdatePassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -431,6 +508,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.TitlePictureBox)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -464,5 +543,11 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.DataGridView dataGridHistory;
         private System.Windows.Forms.DataGridViewTextBoxColumn History;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Button buttonReminder;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox reminderLabelText;
+        private System.Windows.Forms.DateTimePicker dateTimePickerReminder;
     }
 }

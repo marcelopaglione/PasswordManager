@@ -38,6 +38,11 @@ namespace PasswordManager.Data
             return Database.AddNewPasswords(user.ID, passwords);
         }
 
+        public int AddReminderPassword(Reminder reminder)
+        {
+            return Database.AddNewPasswordReminder(reminder);
+        }
+
         public List<Password> GetUserPasswords(User user)
         {
             return Database.GetPasswordsByUserID(user.ID);

@@ -111,5 +111,18 @@ namespace PasswordManager.App
         {
             Functions.CloseWindow(sender, e, this);
         }
+
+        private void buttonReminder_Click(object sender, EventArgs e)
+        {
+            Entities.Reminder newReminder = new Entities.Reminder();
+            newReminder.ReminderText = reminderLabelText.Text;
+            newReminder.ShowReminderDate = Convert.ToDateTime(dateTimePickerReminder.Text);
+            newReminder.ReminderPassword = this.password;
+            object obj = PasswordsService.Instance().AddNewPasswordReminderAsync(newReminder);
+            if (obj != null)
+            {
+                Messenger.Show($"You will be reminbered to '{newReminder.ReminderText}' on '{newReminder.ShowReminderDate}'", "Success");
+            }
+        }
     }
 }

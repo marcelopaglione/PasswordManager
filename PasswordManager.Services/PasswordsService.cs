@@ -168,6 +168,22 @@ namespace PasswordManager.Services
             });
         }
 
+        public Task<Reminder> AddNewPasswordReminderAsync(Reminder reminder)
+        {
+            return Task.Factory.StartNew(() =>
+            {
+                if (ValidationService.Instance().Password(reminder.ReminderPassword))
+                {
+                    if (PasswordsData.Instance().AddReminderPassword(reminder) > 0)
+                    {
+                        return reminder;
+                    }
+                    else return null;
+                }
+                else return null;
+            });
+        }
+
         /// <summary>
         /// Updates the supplied List of Passwords.
         /// </summary>

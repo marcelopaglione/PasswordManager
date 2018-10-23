@@ -13,6 +13,7 @@ namespace PasswordManager.Entities
         public string Username { get; set; }
         public string Email { get; set; }
         public string Master { get; set; }
+        public DateTime LastLoginDate { get; set; }
 
         public List<Password> Passwords { get; set; }
         public Settings Settings { get; set; }

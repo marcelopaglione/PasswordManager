@@ -108,6 +108,11 @@ namespace PasswordManager.Database
                         user.Username = reader["Username"].ToString();
                         user.Email = reader["Email"].ToString();
                         user.Master = reader["Master"].ToString();
+                        try
+                        {
+                            user.LastLoginDate = Convert.ToDateTime(reader["LastLoginDate"]?.ToString());
+                        }
+                        catch (Exception) { }
                     }
                 }
             }
@@ -140,6 +145,11 @@ namespace PasswordManager.Database
                         user.Username = reader["Username"].ToString();
                         user.Email = Email;
                         user.Master = reader["Master"].ToString();
+                        try
+                        {
+                            user.LastLoginDate = Convert.ToDateTime(reader["LastLoginDate"]?.ToString());
+                        }
+                        catch (Exception) { }
                     }                    
                 }
             }
@@ -171,8 +181,17 @@ namespace PasswordManager.Database
                         user.Username = reader["Username"].ToString();
                         user.Email = reader["Email"].ToString();
                         user.Master = reader["Master"].ToString();
+                        try
+                        {
+                            user.LastLoginDate = Convert.ToDateTime(reader["LastLoginDate"]?.ToString());
+                        }
+                        catch (Exception) { }
                     }
                 }
+            }
+            if(user != null)
+            {
+                UpdateUserLastLoginDateTime(user);
             }
             return user;
         }
@@ -202,6 +221,93 @@ namespace PasswordManager.Database
                 }
             }
             return AffectedRows;
+        }
+
+        /// <summary>
+        /// Update User
+        /// </summary>
+        /// <param name="user">User Entity to Update.</param>
+        /// <returns>Number of Rows Affected.</returns>
+        public int UpdateUserLastLoginDateTime(User user)
+        {
+            int AffectedRows = -1;
+
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand("Update Users set LastLoginDate = GETDATE() where ID = @ID", connection))
+                {
+                    command.Parameters.Add(new SqlParameter("@ID", user.ID));
+
+                    connection.Open();
+
+                    AffectedRows = command.ExecuteNonQuery();
+                }
+            }
+            return AffectedRows;
+        }
+
+        public int AddNewPasswordReminder(Reminder reminder)
+        {
+            int AffectedRows = -1;
+
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand(
+                    "Insert into Reminders (ReminderText,ShowReminderDate,ReminderPassword) " +
+                    "Values (@ReminderText,@ShowReminderDate,@ReminderPassword)", connection))
+                {
+                    command.Parameters.Add(new SqlParameter("@ReminderText", reminder.ReminderText));
+                    command.Parameters.Add(new SqlParameter("@ShowReminderDate", reminder.ShowReminderDate));
+                    command.Parameters.Add(new SqlParameter("@ReminderPassword", reminder.ReminderPassword.ID));
+
+                    connection.Open();
+
+                    AffectedRows = command.ExecuteNonQuery();
+                }
+            }
+            return AffectedRows;
+        }
+
+        public List<Reminder> ListPasswordReminders(User user)
+        {
+            List<Reminder> reminders;
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand(
+                    @"SELECT r.[ID]
+                            ,r.[ReminderText]
+                            ,r.[ShowReminderDate]
+                            ,r.[ReminderPassword]
+                            ,r.[ReminderShown]
+                      FROM 
+                      [Reminders] r Inner join Passwords p 
+                      on p.id = r.[ReminderPassword] inner join users u 
+                      on u.id = p.UserID where u.ID = @UserID", connection))
+                {
+                    command.Parameters.Add(new SqlParameter("@UserID", user.ID));
+
+                    connection.Open();
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    reminders = new List<Reminder>();
+
+                    Reminder reminder;
+
+                    while (reader.Read())
+                    {
+                        reminder = new Reminder();
+                        reminder.ID = Convert.ToInt32(reader["ID"]);                        
+                        reminder.ReminderPassword = GetPasswordByID(Convert.ToInt32(reader["ReminderPassword"].ToString()));
+                        reminder.ReminderText = reader["ReminderText"].ToString();
+                        reminder.ShowReminderDate = Convert.ToDateTime(reader["ShowReminderDate"].ToString());
+                        reminder.ReminderShown = Convert.ToBoolean(reader["ReminderShown"].ToString());
+
+                        reminders.Add(reminder);
+                    }                    
+                }
+            }
+            return reminders;
         }
 
         /// <summary>

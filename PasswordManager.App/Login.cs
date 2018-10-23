@@ -74,6 +74,7 @@ namespace PasswordManager.App
                         this.Hide();
                         Dashboard dashboard = new Dashboard(loginUser);
                         dashboard.Show();
+                        ShowUserReminders(loginUser);
                     }
                     else
                     {
@@ -92,6 +93,12 @@ namespace PasswordManager.App
                 Messenger.Show(ex.Message +" "+ ex.HResult, "Error");
                 ResetControls();
             }
+        }
+
+        private void ShowUserReminders(User loginUser)
+        {
+            
+            UsersService.Instance().ShowUserReminders(loginUser, notifyIcon);            
         }
 
         public void ResetControls()
