@@ -88,8 +88,8 @@ namespace PasswordManager.Services
                         if (DateTime.Compare(today, reminder.ShowReminderDate) >= 1)
                         {
                             popupNotifier.Visible = true;
-                            Password pw = (CryptoService.Instance().DecryptUserPassword(user, reminder.ReminderPassword));
-                            popupNotifier.ShowBalloonTip(2000, "Bearpass Notification Center", $"Password for {pw.Name} Requires your attention! {reminder.ReminderText}", ToolTipIcon.Info);
+                            popupNotifier.ShowBalloonTip(2000, "Bearpass Notification Center", $"Password for {(CryptoService.Instance().DecryptUserPassword(user, reminder.ReminderPassword)).Name} Requires your attention! {reminder.ReminderText}", ToolTipIcon.Info);
+                            UsersData.Instance().MarkUserReminderAsShown(reminder);
                         }
                         });
                         return reminders;

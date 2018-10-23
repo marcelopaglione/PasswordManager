@@ -80,7 +80,25 @@ namespace PasswordManager.Database
 
             return AffectedRows;
         }
-        
+
+        public int MarkUserReminderAsShown(Reminder reminder)
+        {
+            int AffectedRows = 0;
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand(
+                "Update Reminders set ReminderShown = 1 where ID = @ReminderID", connection))
+                {
+                    command.Parameters.Add(new SqlParameter("ReminderID", reminder.ID));
+
+                    connection.Open();
+
+                    AffectedRows = command.ExecuteNonQuery();
+                }
+            }
+            return AffectedRows;
+        }
+
         /// <summary>
         /// Get User from Database
         /// </summary>
